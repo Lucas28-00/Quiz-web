@@ -1,0 +1,77 @@
+/* home.css */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Make the page a column so footer can sit at bottom */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main grows to fill available space and center its content */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical centering */
+    align-items: center;     /* horizontal centering */
+    gap: 1.5rem;
+    background: linear-gradient(180deg,#fff9c4 0%,#fff59d 100%); /* warm yellow */
+    font-family: "Inter", "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    transition: filter 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+    margin: auto; /* Center the main element */
+    padding-top: 20px; /* Add padding to prevent touching the top */
+    margin-bottom: auto; /* This will push the footer to the bottom */
+    max-width: 640px;
+    max-height: 60vh;
+    overflow: auto;
+    width: min(90%, 640px);
+    align-self: center;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+/* Center the H1 and give a responsive size */
+main h1 {
+    margin: 0;
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    letter-spacing: 0.5px;
+}
+
+/* Style the Start button and keep it centered (main alignment handles centering) */
+main button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: none;
+    background: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+main button:hover {
+    background: #0056cc;
+}
+
+/* Footer stays at the bottom because body is a column and main grows */
+footer {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+    border-top: 1px solid #e6e6e6;
+    box-sizing: border-box;
+    padding: 0 1rem;
+}
+    
