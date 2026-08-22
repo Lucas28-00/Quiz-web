@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quiz Craft - Create, publish, search, and play interactive trivia quizzes on science, tech, geography, history, and more!">
+    <title>Quiz Craft | Create, Discover & Play Interactive Quizzes</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo" id="brand-logo">
+                <div class="brand-icon">⚡</div>
+                <span>QuizCraft</span>
+            </a>
+            <div class="nav-actions">
+                <a href="index.html" class="nav-link active">Explore</a>
+                <a href="create.html" class="btn btn-primary btn-sm" id="nav-create-btn">
+                    <span>+ Create Quiz</span>
+                </a>
+                <button class="btn-icon" id="sound-toggle-btn" title="Toggle Sound">
+                    🔊
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- HERO SECTION -->
+            <section class="hero-section">
+                <div class="hero-badge">
+                    <span>✨ Interactive Quiz Hub</span>
+                </div>
+                <h1 class="hero-title">
+                    Challenge Your Mind.<br>
+                    <span class="gradient-text">Create, Discover & Play.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Build custom quizzes with multiple questions and answers, publish them for others to play, or test your trivia skills across dozens of topics!
+                </p>
+                <div class="hero-actions">
+                    <a href="create.html" class="btn btn-primary btn-lg" id="hero-create-btn">
+                        <span>✨ Create Your Own Quiz</span>
+                    </a>
+                    <a href="#explore-section" class="btn btn-secondary btn-lg" id="hero-explore-btn">
+                        <span>🔍 Browse Quizzes</span>
+                    </a>
+                </div>
+
+                <!-- STATS COUNTER STRIP -->
+                <div class="stats-strip">
+                    <div class="stat-item">
+                        <div class="stat-number" id="stat-quizzes">0</div>
+                        <div class="stat-label">Available Quizzes</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="stat-questions">0</div>
+                        <div class="stat-label">Total Questions</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="stat-plays">0</div>
+                        <div class="stat-label">Quizzes Played</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SEARCH, FILTERS & CONTROLS -->
+            <section class="controls-panel" id="explore-section">
+                <div class="search-sort-row">
+                    <div class="search-box-wrapper">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="search-input" class="search-input" placeholder="Search quizzes by title, creator, topic, or keyword...">
+                    </div>
+                    <select id="difficulty-select" class="filter-select" title="Filter by Difficulty">
+                        <option value="All">All Difficulties</option>
+                        <option value="Easy">🟢 Easy</option>
+                        <option value="Medium">🟡 Medium</option>
+                        <option value="Hard">🔴 Hard</option>
+                    </select>
+                    <select id="sort-select" class="filter-select" title="Sort Quizzes">
+                        <option value="newest">⚡ Newest First</option>
+                        <option value="popular">🔥 Most Played</option>
+                        <option value="questions">📚 Most Questions</option>
+                        <option value="title">🔤 Alphabetical (A-Z)</option>
+                    </select>
+                </div>
+
+                <!-- CATEGORY CHIPS -->
+                <div class="category-chips" id="category-chips">
+                    <button class="category-chip active" data-category="All">🌟 All Topics</button>
+                    <button class="category-chip" data-category="Geography">🌍 Geography</button>
+                    <button class="category-chip" data-category="Technology">💻 Technology</button>
+                    <button class="category-chip" data-category="Science">🔬 Science</button>
+                    <button class="category-chip" data-category="General">💡 General Knowledge</button>
+                    <button class="category-chip" data-category="History">🏛️ History</button>
+                    <button class="category-chip" data-category="Entertainment">🎬 Entertainment</button>
+                </div>
+            </section>
+
+            <!-- QUIZ LISTING SECTION -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span>🎯 Featured Quizzes</span>
+                    </h2>
+                    <div class="results-count" id="results-count">Loading quizzes...</div>
+                </div>
+
+                <div class="quiz-grid" id="quiz-grid">
+                    <!-- Dynamic quiz cards injected here by app.js -->
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- DELETE CONFIRMATION MODAL -->
+    <div class="modal-overlay" id="delete-modal">
+        <div class="modal-card">
+            <h3 class="modal-title">Delete Quiz?</h3>
+            <p class="modal-desc">Are you sure you want to delete this quiz? This action will remove it from the library permanently.</p>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="cancel-delete-btn">Cancel</button>
+                <button class="btn btn-danger" id="confirm-delete-btn">Yes, Delete Quiz</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div>
+                &copy; 2026 QuizCraft Platform. Made for learners and creators.
+            </div>
+            <div>
+                <a href="create.html" style="margin-right: 1.5rem;">Create a Quiz</a>
+                <a href="index.html">Browse Quizzes</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="js/audio.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

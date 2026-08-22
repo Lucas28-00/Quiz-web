@@ -2,19 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=play.html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Answer the Questions</title>
-    <link rel="stylesheet" href="Questions Page.css">
-    <script src="Questions.js"></script>
+    <title>Redirecting to Quiz Player...</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        window.location.replace("play.html");
+    </script>
 </head>
 <body>
-    <main>
-        <button>
-            Next
-        </button>
+    <main style="display: flex; align-items: center; justify-content: center; min-height: 80vh; text-align: center;">
+        <div>
+            <h2>Redirecting to Quiz Player...</h2>
+            <p style="margin-top: 1rem; color: var(--text-secondary);">If you are not redirected automatically, <a href="play.html" style="color: var(--primary); text-decoration: underline;">click here to enter</a>.</p>
+        </div>
     </main>
-    <footer>
-        &copy; 2025 Quiz Challenge. All rights reserved.
-    </footer>
 </body>
 </html>

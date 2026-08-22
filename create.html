@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quiz Creator Studio - Build, configure, and publish interactive trivia quizzes.">
+    <title>Quiz Creator Studio | Build & Publish Your Quiz</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo">
+                <div class="brand-icon">⚡</div>
+                <span>QuizCraft</span>
+            </a>
+            <div class="nav-actions">
+                <a href="index.html" class="nav-link">← Back to Explore</a>
+                <button class="btn-icon" id="sound-toggle-btn" title="Toggle Sound">
+                    🔊
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <div class="container creator-container">
+
+            <div style="margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <h1 style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; letter-spacing: -0.5px;">
+                        ✍️ Quiz Creator Studio
+                    </h1>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.3rem;">
+                        Compose questions, define options, designate correct answers, and publish instantly.
+                    </p>
+                </div>
+                <button type="button" class="btn btn-secondary btn-sm" id="fill-sample-btn">
+                    <span>✨ Load Sample Template</span>
+                </button>
+            </div>
+
+            <form id="quiz-creator-form">
+                <!-- QUIZ METADATA CARD -->
+                <div class="creator-card">
+                    <h2 style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 1.5rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem;">
+                        <span>📋</span> General Quiz Details
+                    </h2>
+
+                    <div class="form-group">
+                        <label class="form-label" for="quiz-title">Quiz Title <span class="req">*</span></label>
+                        <input type="text" id="quiz-title" class="form-control" placeholder="e.g., Ultimate Solar System & Astronomy Quiz" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="quiz-description">Description / Overview</label>
+                        <textarea id="quiz-description" class="form-control" placeholder="Briefly describe what players will learn or be tested on..."></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="quiz-category">Topic / Category <span class="req">*</span></label>
+                            <select id="quiz-category" class="form-control">
+                                <option value="General">💡 General Knowledge</option>
+                                <option value="Geography">🌍 Geography</option>
+                                <option value="Technology">💻 Technology</option>
+                                <option value="Science">🔬 Science</option>
+                                <option value="History">🏛️ History</option>
+                                <option value="Entertainment">🎬 Entertainment</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="quiz-difficulty">Difficulty Level</label>
+                            <select id="quiz-difficulty" class="form-control">
+                                <option value="Easy">🟢 Easy</option>
+                                <option value="Medium" selected>🟡 Medium</option>
+                                <option value="Hard">🔴 Hard</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="quiz-timer">Time Limit per Question</label>
+                            <select id="quiz-timer" class="form-control">
+                                <option value="0">Untimed (No rush)</option>
+                                <option value="10">10 Seconds</option>
+                                <option value="15">15 Seconds</option>
+                                <option value="20" selected>20 Seconds</option>
+                                <option value="30">30 Seconds</option>
+                                <option value="45">45 Seconds</option>
+                                <option value="60">60 Seconds</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="quiz-creator">Author / Creator Name</label>
+                            <input type="text" id="quiz-creator" class="form-control" placeholder="Your Name or Alias" value="QuizMaker">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- QUESTIONS LIST CARD -->
+                <div style="margin-bottom: 2rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+                        <h2 style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; display: flex; align-items: center; gap: 0.5rem;">
+                            <span>❓</span> Questions (<span id="question-total-count">1 Question</span>)
+                        </h2>
+                        <button type="button" class="btn btn-secondary btn-sm" id="add-question-btn">
+                            <span>+ Add Question</span>
+                        </button>
+                    </div>
+
+                    <!-- Dynamic container for question cards -->
+                    <div id="questions-container"></div>
+
+                    <div style="text-align: center; margin-top: 1rem;">
+                        <button type="button" class="btn btn-secondary" onclick="document.getElementById('add-question-btn').click();">
+                            <span>➕ Add Another Question</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- STICKY ACTION BAR -->
+                <div class="creator-actions-bar">
+                    <a href="index.html" class="btn btn-secondary">
+                        <span>Cancel</span>
+                    </a>
+                    <button type="submit" class="btn btn-primary btn-lg" id="publish-quiz-btn">
+                        <span>🚀 Publish Quiz</span>
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div>
+                &copy; 2026 QuizCraft Platform. Made for learners and creators.
+            </div>
+            <div>
+                <a href="index.html">Back to Explore</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="js/audio.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/create.js"></script>
+</body>
+</html>
